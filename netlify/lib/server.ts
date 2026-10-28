@@ -20,7 +20,7 @@ async function safe(fn: () => Promise<ReturnType<typeof json>>) {
     return await fn();
   } catch (e) {
     const msg = e instanceof FinnhubError ? e.message : `Unexpected error: ${(e as Error).message}`;
-    console.error("[stock-mcp]", msg);
+    console.error("[kabu-mcp]", msg);
     return { content: [{ type: "text" as const, text: msg }], isError: true };
   }
 }
@@ -33,7 +33,7 @@ const symbol = z
   .describe("US stock ticker, e.g. INTC, ARM, META, NVDA");
 
 export function buildServer() {
-  const server = new McpServer({ name: "stock-mcp", version: "0.1.0" });
+  const server = new McpServer({ name: "kabu-mcp", version: "0.1.0" });
 
   server.registerTool(
     "get_quotes",

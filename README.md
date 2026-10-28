@@ -1,4 +1,4 @@
-# stock-mcp
+# kabu-mcp
 
 Finnhubの株価データをClaudeから使うための、自分専用のリモートMCPサーバーです。Netlify Functionsで動きます。
 
